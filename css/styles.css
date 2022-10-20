@@ -1,0 +1,105 @@
+*, *::before, *::after {
+    box-sizing:border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content:center;
+    align-items: center;
+    background-color: #004481;
+}
+
+#scoreLabel {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    color:#FFD500;
+    font-weight: bold;
+    text-align: right;
+}
+
+#pageTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24pt;
+    color:#FFD500;
+    font-weight: bold;
+    text-align: center;
+}
+
+body.correct {
+    background-color: #A77C29;
+}
+
+body.wrong {
+    background-color: #CC101F;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: #757575;
+    color:#FFD500;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.img {
+    display: grid;
+    justify-content:center;
+    align-items: center;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    border: 1px solid blue;
+    background-color: #004481;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #FFD500;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: #A77C29;
+}
+
+.button.correct {
+    background-color:#A77C29;
+}
+
+.button.wrong {
+    background-color: #CC101F;
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+/*
+Dark Cerulean       #004481
+Lava                #CC101F
+Cyber Yellow        #FFD500
+Sonic Silver        #757575
+Metallic Sunburst   #A77C29 */
