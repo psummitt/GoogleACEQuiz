@@ -60,7 +60,7 @@ function selectAnswer(e) {
     } else {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
-        //score = 0 
+        score = 0 
     }
 
 }
@@ -69,9 +69,10 @@ function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
         element.classList.add('correct')
-        //updateScore()
+        updateScore()
     } else {
         element.classList.add('wrong')
+        score = score
     }
 }
 
@@ -80,10 +81,10 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
-/*function updateScore() {
-    score += 1
-    document.getElementById('scoreLabel').innerHTML = "score: " + score
-}*/
+function updateScore() {
+    //score += 1
+    document.getElementById('scoreLabel').innerHTML = "score: " + (score = score + 1)
+}
 
 const questions = [
     {
