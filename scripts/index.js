@@ -5,7 +5,7 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
-let score = 0
+let score
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -17,6 +17,7 @@ function startGame() {
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
+    score = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
@@ -72,7 +73,6 @@ function setStatusClass(element, correct) {
         updateScore()
     } else {
         element.classList.add('wrong')
-        score = score
     }
 }
 
@@ -82,13 +82,13 @@ function clearStatusClass(element) {
 }
 
 function updateScore() {
-    //score += 1
-    document.getElementById('scoreLabel').innerHTML = "score: " + (score = score + 1)
+    score = score + 1
+    document.getElementById('scoreLabel').innerHTML = "score: " + score
 }
 
 const questions = [
     {
-        question: 'What GCP service is Google’s platform-as-a-service offering?',
+        question: "What GCP service is Google’s platform-as-a-service offering?",
         answers: [
             { text: 'Compute Engine', correct: false },
             { text: 'Cloud Spanner', correct: false },
