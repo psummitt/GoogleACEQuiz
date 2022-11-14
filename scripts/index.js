@@ -17,6 +17,7 @@ nextButton.addEventListener('click', () => {
 
 function startGame() {
     startButton.classList.add('hide')
+    
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
@@ -82,7 +83,6 @@ function clearStatusClass(element) {
 }
 
 function updateScore() {
-    console.log(right, wrong)
     document.getElementById('scoreLabel').innerHTML = "Right: " + right + "/ Wrong: " + wrong
 }
 
