@@ -5,7 +5,13 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
+<<<<<<< HEAD
 //let score
+=======
+let right = 0
+let wrong = 0
+console.log(right, wrong)
+>>>>>>> e7938a998ada0cd7e49c4eb0aff7fba6228f7401
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -15,9 +21,15 @@ nextButton.addEventListener('click', () => {
 
 function startGame() {
     startButton.classList.add('hide')
+<<<<<<< HEAD
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     // score = 0
+=======
+    
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+>>>>>>> e7938a998ada0cd7e49c4eb0aff7fba6228f7401
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
@@ -61,7 +73,11 @@ function selectAnswer(e) {
     } else {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
+<<<<<<< HEAD
         // score = 0 
+=======
+
+>>>>>>> e7938a998ada0cd7e49c4eb0aff7fba6228f7401
     }
 
 }
@@ -70,7 +86,10 @@ function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
         element.classList.add('correct')
+<<<<<<< HEAD
         // updateScore()
+=======
+>>>>>>> e7938a998ada0cd7e49c4eb0aff7fba6228f7401
     } else {
         element.classList.add('wrong')
     }
@@ -81,10 +100,16 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
+<<<<<<< HEAD
 /* function updateScore() {
     score = score + 1
     document.getElementById('scoreLabel').innerHTML = "score: " + score
 } */
+=======
+function updateScore() {
+    document.getElementById('scoreLabel').innerHTML = "Right: " + right + "/ Wrong: " + wrong
+}
+>>>>>>> e7938a998ada0cd7e49c4eb0aff7fba6228f7401
 
 const questions = [
     {
@@ -343,6 +368,7 @@ const questions = [
             { text: 'Our app should listen to the port provided by App Engine through the PORT environment variable at runtime.', correct: false },
             { text: 'The DNS record propagation has not yet completed. Wait a few minutes before trying again.', correct: false },
         ]
+<<<<<<< HEAD
     },
     {
         question: 'What GCP service is Google’s platform-as-a-service offering?',
@@ -435,3 +461,8 @@ const questions = [
         ]
     }
 ]
+=======
+    }
+    
+] 
+>>>>>>> e7938a998ada0cd7e49c4eb0aff7fba6228f7401
