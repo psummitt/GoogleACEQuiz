@@ -5,7 +5,7 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
-let score
+//let score
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -17,7 +17,7 @@ function startGame() {
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
-    score = 0
+    // score = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
@@ -61,7 +61,7 @@ function selectAnswer(e) {
     } else {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
-        score = 0 
+        // score = 0 
     }
 
 }
@@ -70,7 +70,7 @@ function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
         element.classList.add('correct')
-        updateScore()
+        // updateScore()
     } else {
         element.classList.add('wrong')
     }
@@ -81,10 +81,10 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
-function updateScore() {
+/* function updateScore() {
     score = score + 1
     document.getElementById('scoreLabel').innerHTML = "score: " + score
-}
+} */
 
 const questions = [
     {
@@ -343,6 +343,95 @@ const questions = [
             { text: 'Our app should listen to the port provided by App Engine through the PORT environment variable at runtime.', correct: false },
             { text: 'The DNS record propagation has not yet completed. Wait a few minutes before trying again.', correct: false },
         ]
+    },
+    {
+        question: 'What GCP service is Google’s platform-as-a-service offering?',
+        answers: [
+        { text: 'Compute Engine', correct: false},
+        { text: 'Cloud Spanner', correct: false},
+        { text: 'App Engine', correct: true},
+        { text: 'Kubernetes Engine', correct: false},
+        ]
+    },
+    {
+        question: 'What GCP storage service would you use to store unstructured data?',
+        answers: [
+        { text: 'Cloud Storage', correct: true},
+        { text: 'DataProc', correct: false},
+        { text: 'DataStore', correct: false},
+        { text: 'BigQuery', correct: false},
+        ]
+    },
+    {
+        question: 'What GCP service provides managed analytic and data warehousing services?',
+        answers: [
+        { text: 'Cloud Spanner', correct: false},
+        { text: 'Cloud SQL', correct: false},
+        { text: 'BigQuery', correct: true},
+        {text: 'Cloud DataFlow', correct: false},
+        ]
+    },
+    {
+        question: 'Which of the following is not possible using Security Command Center?',
+        answers: [
+        { text: 'Gather usage metrics regarding the resources in your Google Cloud environment.', correct: true},
+        { text: 'Identify potential botnet activity on your network.', correct: false},
+        { text: 'Uncover common vulnerabilities such as SQL injection attacks.', correct: false},
+        { text: 'Get a full list of assets in your Google Cloud environment.', correct: false},
+        ]
+    },
+    {
+        question: 'Which of the following is the best option to enable if you want to define alerts on your resources if a health check fails?',
+        answers: [
+        { text: 'Cloud Trace', correct: false},
+        { text: 'Cloud Debugger', correct: false},
+        { text: 'Cloud Monitoring', correct: true},
+        { text: 'Cloud Functions', correct: false},
+        ]
+    },
+    {
+        question: 'Which of the following types of resources can a Service Account Role be applied to?',
+        answers: [
+        { text: 'Virtual Machine', correct: true},
+        { text: 'Google Group', correct: false},
+        { text: 'Folder', correct: false},
+        { text: 'User', correct: false},
+        ]
+    },
+    {
+        question: 'What is the best way to organize projects that need to share the same policy?',
+        answers: [
+        { text: 'Place the policy on the organization so it will apply to the projects simultaneously.', correct: false},
+        { text: 'Consolidate the resources into one project and apply the policy to the single project.', correct: false},
+        { text: 'Place each project in an individual folder and apple the same policy on each folder.', correct: false},
+        { text: 'Place both projects into a folder and apply the policy on the folder.', correct: true},
+        ]
+    },
+    {
+        question: 'Which of the following provides access control to Google Cloud Resources?',
+        answers: [
+        { text: 'Permissions', correct: false},
+        { text: 'Roles', correct: false},
+        { text: 'Firewall Rules', correct: false},
+        { text: 'Policies', correct: true},
+        ]
+    },
+    {
+        question: 'You are onboarding a new engineer who will be in charge of compute engine resources. Which of the following roles should you grant this user?',
+        answers: [
+        { text: 'Compute Editor', correct: false},
+        { text: 'Build a custom role for this user', correct: false},
+        { text: 'Compute Admin Role', correct: true},
+        { text: 'Owner', correct: false},
+        ]
+    },
+    {
+        question: 'Which of the following services is the customer responsible for configuring, administering, and monitoring?',
+        answers: [
+        { text: 'Google App Engine', correct: false},
+        { text: 'Google Cloud Suite', correct: false},
+        { text: 'G Suite', correct: false},
+        { text: 'Google Compute Engine', correct: true},
+        ]
     }
-    
-] 
+]
